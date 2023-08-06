@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Temperature{
+    c;
+
+
+    constructor(cInput) {
+      if (cInput=>-273){
+      this.c = cInput;
+    }else {alert("c phải lớn hơn bằng 273 độ")}
+    }
+
+    getC(){
+      return this.c
+    }
+    setC(cInput){
+      this.c= cInput;
+    }
+    changeCToF(){
+      return this.c* 9/5 + 32
+    }
+    changeCtoK(){
+      return (this.c + 273)
+    }
+  }
+
+  let c1 = new Temperature(-1);
+  alert(c1.changeCToF())
+git
+
+</script>
+</body>
+</html>

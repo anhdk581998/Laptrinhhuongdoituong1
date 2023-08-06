@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Student {
+    name;
+    age;
+    constructor(nameInput, ageInput) {
+      this.name = nameInput;
+      this.age = ageInput;
+    }
+
+    study(){ //là 1 method(phương thúc của student - không cần từ khóa Function)
+      return this.name + " đang học"
+    }
+    getName(){ //getter lấy ra dữ lệu
+      return this.name;
+    }
+    setName(nameInput){ //setter sửa dữ liệu
+      this.name = nameInput;
+    }
+  }
+  // Student: là một lớp mô tả cho đối tượng học viên
+  //constructor là hàm tạo dùng để khởi tạo các đối tượng
+
+      let sinhVien = new Student("nam",19);
+//   alert(sinhVien.name) //cách truy suất thuộc tính(đặc điểm của đối tượng)
+// //chú ý: khi đặt tên lớp, viet theo kiểu Pascal case
+  let sinhVien2 = new Student("Anh", 18);
+alert(sinhVien2.name)
+  alert(sinhVien2.study())//cách truy xuất phương thức của 1 đối tượng
+
+  sinhVien2.setName("linh")
+  alert(sinhVien2.getName())
+
+</script>
+</body>
+</html>

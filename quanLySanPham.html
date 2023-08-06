@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="add">
+    <input type="text" id="create">
+    <button onclick="create()">Tạo mới</button>
+    <table>
+        <tr>
+            <th>Tên</th>
+            <th colspan="2">Sửa/Xóa</th>
+
+            <tbody id='product'>
+
+            </tbody>
+
+    </table>
+</div>
+
+<div id='edit'>
+
+</div>
+
+
+<script>
+  let products = ['bánh mỳ','bánh cáy','kẹo mút']
+  function showAll(){
+    let str = ''
+    for (let i = 0; i < products.length; i++) {
+      str+=          `<tr>
+              <td>${products[i]}</td>
+      <td><button  onclick="showFormEdit(${i})">sửa</button></td>
+      <td><button onclick="remove(${i})">xóa</button></td>
+      </tr>`
+    }
+    document.getElementById('product').innerHTML = str;
+  }
+  showAll()
+
+  function create() {
+    let product = document.getElementById("create").value;
+    products.push(product);
+    showAll()
+  }
+  function remove(inDex) {
+    products.splice(inDex,1);
+    showAll()
+  }
+  
+  function showFormEdit(inDex) {
+    let productEdit = products[inDex];
+    let html = `
+  <input type="text" value="${productEdit}" id="sanpham">
+  <button onclick="saves()">Lưu</button>`
+    document.getElementById('edit').innerHTML = html;
+  }
+  function saves(inDex) {
+    let sanPham = document.getElementById("sanpham").value;
+    document.getElementById("sanpham").value = ''
+    products[inDex]= sanPham
+    showAll()
+  }
+</script>
+</body>
+</html>

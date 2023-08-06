@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Student {
+        name;
+        age;
+        point;
+
+        constructor(nameInput, ageInput, pointInput) {
+            this.name = nameInput;
+            this.age = ageInput;
+            this.point = pointInput;
+        }
+
+        getName() {
+            return this.name
+        }
+
+        getAge() {
+            return this.age
+        }
+
+        getPoint() {
+            return this.point
+        }
+
+        setName(nameInput) {
+            this.name = nameInput
+        }
+
+        setAge(ageInput) {
+            this.age = ageInput
+        }
+
+        setPoint(pointInput) {
+            this.point = pointInput
+        }
+
+        avgPoint() {
+            let sum = 0
+            for (let i = 0; i < this.point.length; i++) {
+                sum += this.point[i]
+            }let avg = sum/this.point.length;
+            return avg
+        }
+        getInfo(){
+            return this.name+ '-'+ this.age + '-'+ this.point
+        }
+    }
+function main(){
+    let sinhVien1 = new Student("Anh",18,[1,2,3,4,5]);
+    alert(sinhVien1.getName())
+    let sinhVien2 = new Student("Lam",18,[1,3,3,4,5]);
+    sinhVien2.setName("Nam")
+    alert(sinhVien2.getName())
+    alert(sinhVien2.avgPoint())
+    if (sinhVien1>sinhVien2){
+        alert(sinhVien1.getInfo())
+    }else alert(sinhVien2.getInfo())
+}
+main()
+
+</script>
+</body>
+</html>
